@@ -1,0 +1,10 @@
+FROM node:12-alpine3.12
+USER root
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
